@@ -12,6 +12,7 @@
 </head>
 <body>
     <h1>Task Manager</h1>
+    <p>Welcome, {{ username }}! <a href="/logout">Logout</a></p>
     <form action="/add" method="post">
         <input type="text" name="description" placeholder="Enter task description" required>
         <button type="submit">Add Task</button>

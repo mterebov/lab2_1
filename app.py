@@ -38,7 +38,7 @@ def index():
         cursor = conn.cursor()
         cursor.execute("SELECT id, description, completed FROM tasks WHERE user_id = ?", (session["user_id"],))
         tasks = [{"id": row[0], "description": row[1], "completed": bool(row[2])} for row in cursor.fetchall()]
-    return render_template("index.html", tasks=tasks)
+    return render_template("index.html", tasks=tasks, username=session.get("username"))
 
 
 @app.route("/register", methods=["GET", "POST"])
